@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-application.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-core.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-life.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-life.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugins.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>
+
