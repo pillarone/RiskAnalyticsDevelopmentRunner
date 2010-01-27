@@ -12,3 +12,4 @@ grails.compiler.dependencies = {
 grails.plugin.location.'risk-analytics-core' = "../RiskAnalyticsCore"
 grails.plugin.location.'risk-analytics-application' = "../RiskAnalyticsApplication"
 grails.plugin.location.'risk-analytics-life' = "../RiskAnalyticsLife"
+grails.plugin.location.'risk-analytics-pc' = "../RiskAnalyticsPC"
