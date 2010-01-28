@@ -1,0 +1,81 @@
+<project name="RiskAnalyticsApplication">
+
+    <property environment="env"/>
+    <property name="GRAILS_HOME" value="${env.GRAILS_HOME}"/>
+    <import file="${GRAILS_HOME}/src/grails/grails-macros.xml"/>
+
+    <property file="application.properties"/>
+
+    <property name="build.prod.dir" value="${user.home}/.grails/${app.grails.version}/projects/${app.name}"/>
+    <property name="plugin.dir" value="${build.prod.dir}/plugins"/>
+    <property name="classes.prod.dir" value="${build.prod.dir}/classes"/>
+    <property name="resources.prod.dir" value="src/java"/>
+
+    <property name="dist.dir" value="dist"/>
+    <property name="target.dir" value="target"/>
+    <property name="webapp.lib.dir" value="web-app/lib"/>
+    <property name="ulcPlugIn.webapp.lib.dir" value="${plugin.dir}/ulc-2008-u1/web-app/lib"/>
+
+    <condition property="grails" value="${GRAILS_HOME}/bin/grails.bat">
+        <os family="windows"/>
+    </condition>
+    <property name="grails" value="${GRAILS_HOME}/bin/grails"/>
+
+    <tstamp>
+        <format property="build-timestamp" pattern="dd.MM.yyyy HH:mm"/>
+    </tstamp>
+
+    <target name="init">
+        <echo message="GRAILS_HOME: ${GRAILS_HOME}"/>
+        <echo message="app.name: ${app.name}"/>
+        <echo message="classes: ${classes.prod.dir}"/>
+        <echo message="user.language: ${user.language}, user.country: ${user.country}"/>
+    </target>
+
+    <target name="clean" depends="init" description="--> Cleans a Grails application">
+        <delete dir="${dist.dir}"/>
+
+        <mkdir dir="${dist.dir}"/>
+        <grails command="clean"/>
+        <delete verbose="true">
+            <fileset dir="." includes="*Db.script"/>
+            <fileset dir="." includes="**Db.properties"/>
+            <fileset dir="." includes="*.tsl"/>
+            <fileset dir="." includes="*.log"/>
+        </delete>
+    </target>
+
+    <target name="clean-plugins"
+            description="Removes all plugins files from the plugin dir. Useful for build servers to avoid grails trying to uninstall an old plugin after an upgrade.">
+        <delete includeemptydirs="true">
+            <fileset dir="${plugin.dir}" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="compile" depends="init" description="--> Compiles a Grails application">
+        <grails command="compile" jvmargs="-Xmx1024m -XX:MaxPermSize=512m"/>
+    </target>
+
+    <target name="standalone-compile" depends="init" description="--> Run a Grails applications unit tests">
+        <exec executable="${grails}" failonerror="true" resolveexecutable="true">
+            <arg value="jar -destination=out/production/RiskAnalyticsDevelopmentRunner"/>
+            <env key="GRAILS_HOME" value="${GRAILS_HOME}"/>
+            <env key="JAVA_OPTS"
+                 value="-Xmx1024m -XX:MaxPermSize=512m -Duser.language='en'"/>
+        </exec>
+    </target>
+
+    <target name="standalone-jar" depends="init" description="--> Run a Grails applications unit tests">
+        <exec executable="${grails}" failonerror="true" resolveexecutable="true">
+            <arg value="jar -destination=out/production/RiskAnalyticsDevelopmentRunner -mainClass=org.pillarone.riskanalytics.application.Main"/>
+            <arg value="-buildJar"/>
+            <env key="GRAILS_HOME" value="${GRAILS_HOME}"/>
+            <env key="JAVA_OPTS"
+                 value="-Xmx1024m -XX:MaxPermSize=512m -Duser.language='en'"/>
+        </exec>
+    </target>
+
+
+
+
+</project>

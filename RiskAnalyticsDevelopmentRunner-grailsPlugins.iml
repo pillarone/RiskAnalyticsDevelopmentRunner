@@ -4,9 +4,9 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/jasper-0.9.5-riskanalytics/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-2008-u1/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.1/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/jasper-0.9.5-riskanalytics/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -47,10 +47,11 @@
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library">
         <CLASSES>
-          <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/jasper-0.9.5-riskanalytics/lib" />
           <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-2008-u1/lib" />
           <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.1/lib" />
+          <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/jasper-0.9.5-riskanalytics/lib" />
           <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5/lib" />
+          <root url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-2008-u1/web-app/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -58,6 +59,7 @@
         <jarDirectory url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5/lib" recursive="false" />
         <jarDirectory url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.1/lib" recursive="false" />
         <jarDirectory url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-2008-u1/lib" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/.grails/1.2.0/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-2008-u1/web-app/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>
