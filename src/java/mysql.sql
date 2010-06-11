@@ -30,21 +30,21 @@ create index single_value_result_x2 on DATABASE_NAME.single_value_result(simulat
 create table DATABASE_NAME.path_mapping (
 id bigint not null auto_increment primary key,
 version bigint not null,
-path_name varchar(255) not null
+path_name varchar(255) binary not null
 ) engine MyISAM;
 create unique index path_mapping_x1 on DATABASE_NAME.path_mapping(path_name);
 
 create table DATABASE_NAME.collector_mapping (
 id bigint not null auto_increment primary key,
 version bigint not null,
-collector_name varchar(255) not null
+collector_name varchar(255) binary not null
 ) engine MyISAM;
 create unique index collector_mapping_x1 on DATABASE_NAME.collector_mapping(collector_name);
 
 create table DATABASE_NAME.field_mapping (
 id bigint not null auto_increment primary key,
 version bigint not null,
-field_name varchar(255) not null
+field_name varchar(255) binary not null
 ) engine MyISAM;
 create unique index field_x1 on DATABASE_NAME.field_mapping(field_name);
 
