@@ -22,8 +22,8 @@ simulation_run_id bigint not null,
 value double not null,
 primary key(id, simulation_run_id)
 ) engine MyISAM
-partition by key(simulation_run_id)
-partitions 100;
+partition by list(simulation_run_id)
+( partition dummy values in (-1) );
 create index single_value_result_x1 on DATABASE_NAME.single_value_result(simulation_run_id, period, path_id, collector_id, field_id, value, iteration);
 create index single_value_result_x2 on DATABASE_NAME.single_value_result(simulation_run_id, period, path_id, collector_id, field_id, iteration, value);
 
