@@ -10,9 +10,9 @@ import groovy.sql.Sql
 
 databaseName = 'p1rat'
 
-grailsHome = Ant.project.properties."environment.GRAILS_HOME"
+grailsHome = ant.project.properties."environment.GRAILS_HOME"
 
-includeTargets << grailsScript("Init")
+//includeTargets << grailsScript("Init")
 
 target('default': "init db") {
     getClass().classLoader.rootLoader?.addURL(new File(classesDirPath).toURL())
