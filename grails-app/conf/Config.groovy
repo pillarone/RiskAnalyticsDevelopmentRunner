@@ -1,6 +1,7 @@
-import org.pillarone.riskanalytics.core.output.batch.DerbyBulkInsert
-import org.pillarone.riskanalytics.core.output.batch.MysqlBulkInsert
-import org.pillarone.riskanalytics.core.output.batch.SQLServerBulkInsert
+import org.pillarone.riskanalytics.core.output.batch.results.DerbyBulkInsert
+import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
+import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
+import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
 
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
@@ -26,7 +27,7 @@ grails.enable.native2ascii = true
 
 maxIterations = 100000
 keyFiguresToCalculate = null
-batchInsert = null
+resultBulkInsert = null
 userLogin = false
 // a cron for a batch, A cron expression is a string comprised of 6 or 7 fields separated by white space.
 // Fields can contain any of the allowed values: Sec Min Hour dayOfMonth month dayOfWeek Year
@@ -34,7 +35,7 @@ userLogin = false
 batchCron = "0 0/10 * * * ?"
 environments {
     development {
-        models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel']
+        models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel', 'PodraModel']
 
         ExceptionSafeOut = System.out
         log4j = {
@@ -72,7 +73,7 @@ environments {
     }
     sqlserver {
         models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel']
-        batchInsert = SQLServerBulkInsert
+        resultBulkInsert = SQLServerBulkInsert
         keyFiguresToCalculate = [
                 'stdev': true,
                 'percentile': [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0],
@@ -93,9 +94,10 @@ environments {
         }
     }
     mysql {
-        batchInsert = MysqlBulkInsert
+        resultBulkInsert = MysqlBulkInsert
+        calculationBulkInsert = MysqlCalculationsBulkInsert
         ExceptionSafeOut = System.out
-        models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel']
+        models = ['MultiCompanyModel']
         log4j = {
             appenders {
                 console name: 'stdout', layout: pattern(conversionPattern: '[%d] %-5p %c{1} %m%n')
@@ -105,25 +107,7 @@ environments {
                 error 'stdout', 'file'
                 additivity = false
             }
-            info 'org.pillarone.riskanalytics.core.output',
-                    'org.pillarone.riskanalytics.core.components',
-                    'org.pillarone.riskanalytics.core.simulation',
-                    'org.pillarone.modelling.fileimport',
-                    'org.pillarone.modelling.domain',
-                    'org.pillarone.modelling.packets',
-                    'org.pillarone.riskanalytics.core.parameterization',
-                    'org.pillarone.application.jobs.JobScheduler',
-                    'org.pillarone.riskanalytics.core.simulation.engine',
-                    'org.pillarone.application.jobs.BatchRunner',
-                    'org.pillarone.modelling.ui.main.action.ImportAllAction',
-                    'org.pillarone.modelling.ui.main.action.ItemLoadHandler'
-
-            debug 'org.pillarone.modelling.output',
-                    //'org.pillarone.modelling.domain.life.accounting.Account'
-                    //'org.pillarone.modelling.packets.life.UnitLinkedLifeReinsuranceContract',
-                    //'org.pillarone.modelling.fileimport'
-
-                    warn()
+            info 'org.pillarone.riskanalytics'
         }
         keyFiguresToCalculate = [
                 'stdev': true,
@@ -146,7 +130,7 @@ environments {
         ]
     }
     standalone {
-        batchInsert = DerbyBulkInsert
+        resultBulkInsert = DerbyBulkInsert
         ExceptionSafeOut = System.err
         maxIterations = 10000
         models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel']
