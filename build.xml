@@ -1,4 +1,4 @@
-<project name="RiskAnalyticsApplication">
+<project name="RiskAnalyticsDevRunner">
 
     <property environment="env"/>
     <property name="GRAILS_HOME" value="${env.GRAILS_HOME}"/>
@@ -8,13 +8,13 @@
 
     <property name="build.prod.dir" value="${user.home}/.grails/${app.grails.version}/projects/${app.name}"/>
     <property name="plugin.dir" value="${build.prod.dir}/plugins"/>
-    <property name="classes.prod.dir" value="${build.prod.dir}/classes"/>
+    <property name="classes.prod.dir" value="${build.prod.dir}/plugin-classes"/>
     <property name="resources.prod.dir" value="src/java"/>
 
     <property name="dist.dir" value="dist"/>
     <property name="target.dir" value="target"/>
     <property name="webapp.lib.dir" value="web-app/lib"/>
-    <property name="ulcPlugIn.webapp.lib.dir" value="${plugin.dir}/ulc-2008-u1/web-app/lib"/>
+    <property name="ulcPlugIn.webapp.lib.dir" value="${plugin.dir}/ulc-2008-u4-3/web-app/lib"/>
 
     <condition property="grails" value="${GRAILS_HOME}/bin/grails.bat">
         <os family="windows"/>
@@ -53,7 +53,43 @@
     </target>
 
     <target name="compile" depends="init" description="--> Compiles a Grails application">
-        <grails command="compile" jvmargs="-Xmx1024m -XX:MaxPermSize=512m"/>
+        <grails command="compile" jvmargs="-Xmx2024m -XX:MaxPermSize=512m"/>
+    </target>
+
+    <target name="jar-client" description="--> Create clientside jar files">
+        <mkdir dir="${webapp.lib.dir}"/>
+        <delete dir="${webapp.lib.dir}">
+            <include name="${app.name}*.jar"/>
+        </delete>
+
+
+        <jar jarfile="${webapp.lib.dir}/${app.name}-extensions-client.jar">
+            <fileset dir="${classes.prod.dir}" includes="com/canoo/ulc/**/client/**"/>
+            <fileset dir="${resources.prod.dir}" includes="**/close-*.png"/>
+        </jar>
+
+        <jar jarfile="${webapp.lib.dir}/${app.name}-client.jar">
+            <fileset dir="${classes.prod.dir}" includes="org/pillarone/riskanalytics/application/client/**"/>
+            <fileset dir="${classes.prod.dir}"
+                     includes="org/pillarone/riskanalytics/application/environment/shared/**"/>
+            <fileset dir="${resources.prod.dir}" includes="*.png"/>
+        </jar>
+
+        <jar jarfile="${webapp.lib.dir}/${app.name}-jnlp-client.jar">
+            <fileset dir="${classes.prod.dir}" includes="org/pillarone/riskanalytics/application/environment/jnlp/**"/>
+        </jar>
+
+        <jar jarfile="${webapp.lib.dir}/${app.name}-applet-client.jar">
+            <fileset dir="${classes.prod.dir}"
+                     includes="org/pillarone/riskanalytics/application/environment/applet/**"/>
+        </jar>
+
+        <!-- has to be replaced with a trusted certificate issued for the builder of the jar files -->
+        <!-- this is a self signed certificate and won't work with a strict security policy -->
+        <signjar alias="pillarone" keystore="pillarone.keystore" storepass="nopasswd" keypass="nopasswd" lazy="false">
+            <fileset dir="${webapp.lib.dir}" includes="${app.name}*.jar"/>
+            <fileset dir="${ulcPlugIn.webapp.lib.dir}" includes="**/*.jar"/>
+        </signjar>
     </target>
 
     <target name="standalone-compile" depends="init" description="--> Run a Grails applications unit tests">
@@ -61,7 +97,7 @@
             <arg value="jar -destination=out/production/RiskAnalyticsDevelopmentRunner"/>
             <env key="GRAILS_HOME" value="${GRAILS_HOME}"/>
             <env key="JAVA_OPTS"
-                 value="-Xmx1024m -XX:MaxPermSize=512m -Duser.language='en'"/>
+                 value="-Xmx1524m -XX:MaxPermSize=512m -Duser.language='en'"/>
         </exec>
     </target>
 
@@ -74,8 +110,6 @@
                  value="-Xmx1024m -XX:MaxPermSize=512m -Duser.language='en'"/>
         </exec>
     </target>
-
-
 
 
 </project>
