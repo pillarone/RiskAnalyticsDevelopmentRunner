@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+    <description>Main Spring file for grid configuration.</description>
+
+    <bean id="grid.cfg" class="org.gridgain.grid.GridConfigurationAdapter" scope="singleton">
+
+        <!--
+        <property name="peerClassLoadingEnabled" value="false"/>
+        -->
+
+        <property name="p2PLocalClassPathExclude">
+            <list>
+                <value>org.apache.commons.logging.*</value>
+                <value>org.slf4j.*</value>
+            </list>
+        </property>
+
+        <property name="gridLogger">
+            <bean class="org.gridgain.grid.logger.log4j.GridLog4jLogger">
+                <constructor-arg type="java.lang.String" value="./gridgain-3.0.0c/log4j.xml"/>
+            </bean>
+        </property>
+
+    </bean>
+</beans>
