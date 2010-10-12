@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="gridgain-3.0.0c">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/gridgain-3.0.0c/gridgain-3.0.0c.jar!/" />
+      <root url="file://$PROJECT_DIR$/gridgain-3.0.0c/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/gridgain-3.0.0c/lib" recursive="false" />
+  </library>
+</component>
