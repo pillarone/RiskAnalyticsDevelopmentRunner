@@ -20,6 +20,7 @@ CREATE TABLE [DATABASE_NAME].[dbo].[single_value_result] (
 	[simulation_run_id] [numeric](19, 0) NOT NULL,
 	[value] [float] NOT NULL,
 	[value_index] [int] NOT NULL,
+	[date] [datetime],
 PRIMARY KEY CLUSTERED ( [id] ASC ) WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY];
 
