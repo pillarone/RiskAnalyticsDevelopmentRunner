@@ -1,7 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="GridGain 3.0.0c Node" type="Application" factoryName="Application">
     <extension name="coverage" enabled="false" merge="false" />
-    <extension name="snapshooter" />
     <option name="MAIN_CLASS_NAME" value="org.gridgain.grid.loaders.cmdline.GridCommandLineLoader" />
     <option name="VM_PARAMETERS" value="-XX:MaxPermSize=128m -XX:+UseParNewGC -XX:MaxNewSize=32m -XX:NewSize=32m -Xms256m -Xmx256m -XX:SurvivorRatio=128 -XX:MaxTenuringThreshold=0  -XX:+UseTLAB -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Djava.net.preferIPv4Stack=true -DGRIDGAIN_QUIET=false" />
     <option name="PROGRAM_PARAMETERS" value="./gridgain-3.0.0c/config.xml" />

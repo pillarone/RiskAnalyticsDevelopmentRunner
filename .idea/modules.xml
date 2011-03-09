@@ -3,11 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-application.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-core.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-life.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-life.iml" />
       <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-pc.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-pc.iml" group="Plugins" />
-      <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugins.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugins.iml" />
       <module fileurl="file://$PROJECT_DIR$/gridgain-3.0.0c/gridgain-3.0.0c.iml" filepath="$PROJECT_DIR$/gridgain-3.0.0c/gridgain-3.0.0c.iml" />
     </modules>
   </component>

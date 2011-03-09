@@ -97,7 +97,7 @@ environments {
         resultBulkInsert = MysqlBulkInsert
         calculationBulkInsert = MysqlCalculationsBulkInsert
         ExceptionSafeOut = System.out
-        models = ['MultiCompanyModel']
+        models = ['MultiCompanyModel','PodraModel','CapitalEagleModel']
         log4j = {
             appenders {
                 console name: 'stdout', layout: pattern(conversionPattern: '[%d] %-5p %c{1} %m%n')

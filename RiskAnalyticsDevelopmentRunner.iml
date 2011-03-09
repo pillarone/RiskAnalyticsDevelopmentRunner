@@ -7,6 +7,7 @@
           <root url="file://$MODULE_DIR$/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -32,7 +33,11 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/jobs" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
       <excludeFolder url="file://$MODULE_DIR$/web-app/plugins" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -42,17 +47,20 @@
       <library name="Grails User Library">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-standalone-client/jars/ulc-standalone-client-2008-u4-4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-servlet-client/jars/ulc-servlet-client-2008-u4-4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-jnlp-client/jars/ulc-jnlp-client-2008-u4-4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-ejb-client/jars/ulc-ejb-client-2008-u4-4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-base-trusted/jars/ulc-base-trusted-2008-u4-4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-base-client/jars/ulc-base-client-2008-u4-4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/canoo/ulc-applet-client/jars/ulc-applet-client-2008-u4-4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-application" />
-    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-life" />
-    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugins" />
-    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-core" />
-    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-pc" />
+    <orderEntry type="library" name="grails-1.3.4" level="project" />
   </component>
 </module>
 
