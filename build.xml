@@ -111,5 +111,15 @@
         </exec>
     </target>
 
+    <target name="war" depends="clean, compile, jar-client"
+            description="--> Creates a WAR of a Grails application environment=mysql">
+        <exec executable="${grails}" failonerror="true" resolveexecutable="true">
+            <arg value="-Dgrails.env=mysql"/>
+            <arg value="war"/>
+            <env key="GRAILS_HOME" value="${GRAILS_HOME}"/>
+            <env key="JAVA_OPTS" value="-Xmx1024m -XX:MaxPermSize=512m"/>
+        </exec>
+    </target>
+
 
 </project>
