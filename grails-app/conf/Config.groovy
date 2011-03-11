@@ -2,6 +2,7 @@ import org.pillarone.riskanalytics.core.output.batch.results.DerbyBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
+import grails.plugins.springsecurity.SecurityConfigType
 
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
@@ -171,4 +172,32 @@ log4j = {
     info()
     debug()
     warn()
+}
+
+
+grails {
+    plugins {
+        springsecurity {
+            userLookup {
+                userDomainClassName = 'org.pillarone.riskanalytics.core.user.Person'
+                authorityJoinClassName = 'org.pillarone.riskanalytics.core.user.PersonAuthority'
+            }
+            authority {
+                className = 'org.pillarone.riskanalytics.core.user.Authority'
+            }
+            securityConfigType = SecurityConfigType.InterceptUrlMap
+            interceptUrlMap = [
+                    '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/**/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/**/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/**/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/**/*.jar': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/ulcserverendpoint/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+                    '/person/**': ['ROLE_ADMIN'],
+                    '/authority/**': ['ROLE_ADMIN'],
+                    '/**': ['IS_AUTHENTICATED_REMEMBERED'],
+            ]
+        }
+    }
 }
