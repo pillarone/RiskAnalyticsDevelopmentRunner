@@ -1,4 +1,3 @@
-import org.pillarone.riskanalytics.core.output.batch.results.DerbyBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
@@ -130,7 +129,6 @@ environments {
         ]
     }
     standalone {
-        resultBulkInsert = DerbyBulkInsert
         ExceptionSafeOut = System.err
         maxIterations = 10000
         models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel']
