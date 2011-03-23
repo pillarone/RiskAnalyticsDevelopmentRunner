@@ -53,7 +53,7 @@
     </target>
 
     <target name="compile" depends="init" description="--> Compiles a Grails application">
-        <grails command="compile" jvmargs="-Xmx2024m -XX:MaxPermSize=512m"/>
+        <grails command="compile" jvmargs="-Xmx1024m -XX:MaxPermSize=512m"/>
     </target>
 
     <target name="jar-client" description="--> Create clientside jar files">
