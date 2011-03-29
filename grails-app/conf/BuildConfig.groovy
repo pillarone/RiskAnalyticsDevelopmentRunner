@@ -32,6 +32,7 @@ grails.project.dependency.resolution = {
 
         runtime "org.pillarone:jasper:0.9.5-riskanalytics"
         compile "com.canoo:ulc:${ulcVersion}"
+        runtime "org.pillarone:pillar-one-ulc-extensions:0.1"
     }
 
     dependencies {
@@ -50,3 +51,5 @@ grails.plugin.location.'risk-analytics-core' = "../RiskAnalyticsCore"
 grails.plugin.location.'risk-analytics-application' = "../RiskAnalyticsApplication"
 grails.plugin.location.'risk-analytics-life' = "../RiskAnalyticsLife"
 grails.plugin.location.'risk-analytics-pc' = "../RiskAnalyticsPC"
+//grails.plugin.location.'risk-analytics-graph-core' = "../RiskAnalyticsGraphCore"
+//grails.plugin.location.'risk-analytics-graph-form-editor' = "../RiskAnalyticsGraphFormEditor"
