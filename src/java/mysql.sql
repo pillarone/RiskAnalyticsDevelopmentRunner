@@ -20,7 +20,7 @@ field_id bigint not null,
 period int not null,
 simulation_run_id bigint not null,
 value double not null,
-date datetime DEFAULT null,
+date bigint DEFAULT null,
 primary key(id, simulation_run_id)
 ) engine MyISAM
 partition by list(simulation_run_id)
