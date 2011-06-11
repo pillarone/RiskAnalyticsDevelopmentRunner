@@ -1,6 +1,8 @@
 import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
+import org.pillarone.riskanalytics.application.logging.model.LoggingAppender
+import org.pillarone.riskanalytics.core.output.batch.results.OracleBulkInsert
 
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
@@ -114,6 +116,55 @@ environments {
                 'var': [99, 99.5],
                 'tvar': [99, 99.5],
                 'pdf': 200
+        ]
+    }
+    oracle {
+//        serverSessionPrefix = ";jsessionid="
+        resultBulkInsert = OracleBulkInsert
+//        calculationBulkInsert = org.pillarone.riskanalytics.core.output.batch.calculations.GenericBulkInsert
+        ExceptionSafeOut = System.out
+        models = ['PodraModel']
+        log4j = {
+            appenders {
+
+                String layoutPattern = "[%d{dd.MMM.yyyy HH:mm:ss,SSS}] - %t (%X{username}) - %-5p %c{1} %m%n"
+
+                console name: 'stdout', layout: pattern(conversionPattern: layoutPattern)
+
+                LoggingAppender loggingAppender = LoggingAppender.getInstance()
+                loggingAppender.setName('application')
+                loggingAppender.loggingManager.layout = "[%d{HH:mm:ss,SSS}] - %c{1} %m%n"
+                appender loggingAppender
+
+            }
+            root {
+                error()
+                additivity = false
+            }
+
+            def infoPackages = [
+                    'org.pillarone.riskanalytics',
+            ]
+
+            def debugPackages = [
+                    'org.pillarone.riskanalytics.core.fileimport'
+            ]
+
+            info(
+                    application: infoPackages,
+                    stdout: infoPackages,
+                    additivity: false
+            )
+
+            debug(
+                    application: debugPackages,
+                    stdout: debugPackages,
+                    additivity: false
+            )
+
+        }
+        keyFiguresToCalculate = [
+                'stdev': true
         ]
     }
     production {

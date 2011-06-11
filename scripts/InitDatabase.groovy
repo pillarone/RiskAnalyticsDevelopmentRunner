@@ -7,6 +7,7 @@
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource
 import groovy.sql.Sql
+import java.sql.SQLException
 
 databaseName = 'p1rat'
 
@@ -32,11 +33,15 @@ target('default': "init db") {
 def execute(db, command) {
     def cmd = command.toString()
     println "executing: $cmd"
-    def result = db.execute(cmd)
-    if (result)
-        println "db returned with: $result"
-    else
-        println "ok"
+    try {
+        def result = db.execute(cmd)
+        if (result)
+            println "db returned with: $result"
+        else
+            println "ok"
+    } catch (SQLException e) {
+        println "Execution failed: ${e.message}"
+    }
 }
 
 def getDataSource() {

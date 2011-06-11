@@ -47,6 +47,29 @@ environments {
             pooled = true
         }
     }
+    oracle {
+        dataSource {
+            // Setting up mysql:
+            //   create database p1rat;
+            //   create user 'p1rat'@'localhost' identified by 'p1rat';
+            //   grant all on table p1rat.* to 'p1rat'@'localhost';
+            // required for batch uploads:
+            //   grant file on *.* to 'p1rat'@'localhost';
+            dbCreate = "update" // should always stay on update! use InitDatabase script to drop/create DB
+            url = "jdbc:oracle:thin:@//localhost/XE"
+            driverClassName = "oracle.jdbc.driver.OracleDriver"
+            dialect = "org.hibernate.dialect.Oracle10gDialect"
+            username = "p1rat"
+            password = "p1rat"
+            pooled = true
+            properties {
+                validationQuery = "SELECT 1"
+                testOnBorrow = "true"
+                maxActive = 50
+                maxIdle = 25
+            }
+        }
+    }
     sqlserver {
         dataSource {
             dbCreate = "update" // should always stay on update! use InitDatabase script to drop/create DB
