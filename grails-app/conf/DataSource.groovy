@@ -63,7 +63,7 @@ environments {
             password = "p1rat"
             pooled = true
             properties {
-                validationQuery = "SELECT 1"
+                validationQuery = "SELECT 1 FROM dual"
                 testOnBorrow = "true"
                 maxActive = 50
                 maxIdle = 25
