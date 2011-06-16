@@ -31,7 +31,9 @@ target('default': "init db") {
 }
 
 def execute(db, command) {
-    def cmd = command.toString()
+    def cmd = command.toString().trim()
+    //skip comments
+    if(cmd.startsWith("--")) return
     println "executing: $cmd"
     try {
         def result = db.execute(cmd)
