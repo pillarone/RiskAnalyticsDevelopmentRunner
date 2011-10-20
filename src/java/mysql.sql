@@ -5,7 +5,7 @@
 --                numbers to distinguish components of a vector output
 --                are introduced
 --
---
+--;
 drop database if exists DATABASE_NAME;
 create database DATABASE_NAME;
 
@@ -51,11 +51,10 @@ create unique index field_x1 on DATABASE_NAME.field_mapping(field_name);
 
 --
 -- view to access all data via symbolic names
---
+--;
 create view DATABASE_NAME.symbolic_value_result as
 select s.id, p.path_name as 'path', c.collector_name as 'collector', f.field_name as 'field', s.simulation_run_id, s.period, s.value, s.date, s.iteration
 from DATABASE_NAME.single_value_result s, DATABASE_NAME.path_mapping p, DATABASE_NAME.collector_mapping c, DATABASE_NAME.field_mapping f
 where s.path_id = p.id
 and s.collector_id = c.id
-and s.field_id = f.id
-;
+and s.field_id = f.id;
