@@ -28,6 +28,24 @@ partition by list(simulation_run_id)
 create index single_value_result_x1 on DATABASE_NAME.single_value_result(simulation_run_id, period, path_id, collector_id, field_id, value, iteration);
 create index single_value_result_x2 on DATABASE_NAME.single_value_result(simulation_run_id, period, path_id, collector_id, field_id, iteration, value);
 
+
+create table DATABASE_NAME.post_simulation_calculation (
+id bigint not null auto_increment,
+version bigint not null,
+path_id bigint not null,
+collector_id bigint not null,
+field_id bigint not null,
+period int not null,
+run_id bigint not null,
+result double not null,
+key_figure varchar(24) not null,
+key_figure_parameter decimal(19,2) null,
+primary key(id, run_id)
+) engine MyISAM
+partition by list(run_id)
+( partition dummy values in (-1) );
+create index post_simulation_calculation_x1 on DATABASE_NAME.post_simulation_calculation(run_id,key_figure, period, path_id, collector_id, field_id, key_figure_parameter, result);
+
 create table DATABASE_NAME.path_mapping (
 id bigint not null auto_increment primary key,
 version bigint not null,
