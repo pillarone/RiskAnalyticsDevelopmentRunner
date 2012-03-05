@@ -21,6 +21,11 @@
     </condition>
     <property name="grails" value="${GRAILS_HOME}/bin/grails"/>
 
+    <condition property="GRAILS_JVM_OPTS" value="${env.GRAILS_JVM_OPTS}">
+        <isset property="env.GRAILS_JVM_OPTS" />
+    </condition>
+    <property name="GRAILS_JVM_OPTS" value="-Xmx1500m -XX:MaxPermSize=512m -Duser.language='en'"/>
+
     <tstamp>
         <format property="build-timestamp" pattern="dd.MM.yyyy HH:mm"/>
     </tstamp>
@@ -96,8 +101,7 @@
         <exec executable="${grails}" failonerror="true" resolveexecutable="true">
             <arg value="jar -destination=out/production/RiskAnalyticsDevelopmentRunner"/>
             <env key="GRAILS_HOME" value="${GRAILS_HOME}"/>
-            <env key="JAVA_OPTS"
-                 value="-Xmx1524m -XX:MaxPermSize=512m -Duser.language='en'"/>
+            <env key="JAVA_OPTS" value="${GRAILS_JVM_OPTS}"/>
         </exec>
     </target>
 
@@ -106,8 +110,7 @@
             <arg value="jar -destination=out/production/RiskAnalyticsDevelopmentRunner -mainClass=org.pillarone.riskanalytics.application.Main"/>
             <arg value="-buildJar"/>
             <env key="GRAILS_HOME" value="${GRAILS_HOME}"/>
-            <env key="JAVA_OPTS"
-                 value="-Xmx1024m -XX:MaxPermSize=512m -Duser.language='en'"/>
+            <env key="JAVA_OPTS" value="${GRAILS_JVM_OPTS}"/>
         </exec>
     </target>
 
