@@ -19,7 +19,9 @@ grails.project.dependency.resolution = {
 
     mavenRepo "https://build.intuitive-collaboration.com/maven/plugins/"
 
-    String ulcVersion = "ria-suite-u2"
+//    String ulcVersion = "ria-suite-u2-P1"
+    // kti
+    String ulcVersion = "ria-suite-u2-P1-2"
 
     plugins {
         runtime ":background-thread:1.3"
@@ -27,12 +29,12 @@ grails.project.dependency.resolution = {
         runtime ":joda-time:0.5"
         runtime ":maven-publisher:0.7.5"
         runtime ":quartz:0.4.2"
-        runtime ":spring-security-core:1.0.1"
+        runtime ":spring-security-core:1.1.2"
         runtime ":jetty:1.2-SNAPSHOT"
 
         runtime "org.pillarone:jasper:0.9.5-riskanalytics"
         compile "com.canoo:ulc:${ulcVersion}"
-        runtime "org.pillarone:pillar-one-ulc-extensions:0.1"
+        runtime "org.pillarone:pillar-one-ulc-extensions:0.2"
     }
 
     dependencies {
@@ -47,9 +49,12 @@ grails.project.dependency.resolution = {
 }
 
 //Change paths to desired risk analytics plugin locations
-grails.plugin.location.'risk-analytics-core' = "../RiskAnalyticsCore"
-grails.plugin.location.'risk-analytics-application' = "../RiskAnalyticsApplication"
-grails.plugin.location.'risk-analytics-life' = "../RiskAnalyticsLife"
-grails.plugin.location.'risk-analytics-pc' = "../RiskAnalyticsPC"
+grails.plugin.location.'risk-analytics-core' = "../risk-analytics-core"
+grails.plugin.location.'risk-analytics-application' = "../risk-analytics-application"
+//grails.plugin.location.'risk-analytics-life' = "../RiskAnalytics-Life"
+grails.plugin.location.'risk-analytics-commons' = "../risk-analytics-commons"
+grails.plugin.location.'risk-analytics-reporting' = "../risk-analytics-reporting"
+grails.plugin.location.'risk-analytics-pc-cashflow' = "../risk-analytics-pc-cashflow"
+grails.plugin.location.'risk-analytics-property-casualty' = "../risk-analytics-property-casualty"
 //grails.plugin.location.'risk-analytics-graph-core' = "../RiskAnalyticsGraphCore"
 //grails.plugin.location.'risk-analytics-graph-form-editor' = "../RiskAnalyticsGraphFormEditor"
