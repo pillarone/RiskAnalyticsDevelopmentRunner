@@ -13,6 +13,20 @@
         <property name="peerClassLoadingEnabled" value="false"/>
         -->
 
+        <property name="discoverySpi">
+            <bean class="org.gridgain.grid.spi.discovery.tcp.GridTcpDiscoverySpi">
+                <property name="ipFinder">
+                    <bean class="org.gridgain.grid.spi.discovery.tcp.ipfinder.vm.GridTcpDiscoveryVmIpFinder">
+                        <property name="addresses">
+                            <list>
+                                <value>127.0.0.1</value>
+                            </list>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+
         <property name="p2PLocalClassPathExclude">
             <list>
                 <value>org.apache.commons.logging.*</value>
@@ -22,7 +36,7 @@
 
         <property name="gridLogger">
             <bean class="org.gridgain.grid.logger.log4j.GridLog4jLogger">
-                <constructor-arg type="java.lang.String" value="./gridgain-3.0.0c/log4j.xml"/>
+                <constructor-arg type="java.lang.String" value="./gridgain-3.0.9c/log4j.xml"/>
             </bean>
         </property>
 
