@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="Grails" name="Grails" removed="false">
+          <file>file://$MODULE_DIR$/../risk-analytics-core/web-app/WEB-INF/applicationContext.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/code-coverage-1.2.4/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/../risk-analytics-core/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -18,61 +25,26 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/background-thread-1.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/background-thread-1.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/background-thread-1.3/grails-app/services" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/code-coverage-1.2.4">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/code-coverage-1.2.4/grails-app/i18n" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/excel-import-0.9.6">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/excel-import-0.9.6/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/hibernate-2.2.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/hibernate-2.2.1/grails-app/i18n" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/maven-publisher-0.7.5">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/maven-publisher-0.7.5/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/maven-publisher-0.7.5/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/pillar-one-ulc-extensions-0.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/pillar-one-ulc-extensions-0.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/pillar-one-ulc-extensions-0.3/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2/grails-app/services" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/spring-security-core-1.2.7.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/spring-security-core-1.2.7.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/spring-security-core-1.2.7.3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/spring-security-core-1.2.7.3/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/spring-security-core-1.2.7.3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/spring-security-core-1.2.7.3/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/tomcat-2.2.1" />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../risk-analytics-core">
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/jobs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../risk-analytics-core/test/integration" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="grails-2.2.1" level="application" />
-    <orderEntry type="module-library" exported="">
-      <library name="Grails User Library (RiskAnalyticsDevelopmentRunner-grailsPlugins)">
+    <orderEntry type="module-library">
+      <library name="Grails User Library (riskAnalyticsCore-inplacePlugin)">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/../risk-analytics-core/lib" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/stax/stax-api/jars/stax-api-1.0.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.xmlbeans/xmlbeans/jars/xmlbeans-2.3.0.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.poi/poi-ooxml-schemas/jars/poi-ooxml-schemas-3.8.jar!/" />
@@ -154,21 +126,13 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/tomcat/jasper-compiler/jars/jasper-compiler-5.5.15.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.eclipse.jdt/core/jars/core-3.1.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/tomcat/jasper-compiler-jdt/jars/jasper-compiler-jdt-5.5.15.jar!/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/excel-import-0.9.6/lib" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2/lib" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/pillar-one-ulc-extensions-0.3/lib" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/lib" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/excel-import-0.9.6/lib" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/joda-time-0.5/lib" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/pillar-one-ulc-extensions-0.3/lib" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/quartz-0.4.2/lib" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/RiskAnalyticsDevelopmentRunner/plugins/ulc-ria-suite-u5/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../risk-analytics-core/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugins" />
   </component>
 </module>
 

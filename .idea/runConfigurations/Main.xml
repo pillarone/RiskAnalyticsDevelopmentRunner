@@ -6,7 +6,6 @@
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <extension name="snapshooter" />
     <option name="MAIN_CLASS_NAME" value="org.pillarone.riskanalytics.application.Main" />
     <option name="VM_PARAMETERS" value="-Xmx1024m -XX:MaxPermSize=256m -Duser.language=en" />
     <option name="PROGRAM_PARAMETERS" value="" />
@@ -21,8 +20,8 @@
     <RunnerSettings RunnerId="Run" />
     <ConfigurationWrapper RunnerId="Run" />
     <method>
-      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="standalone-compile" />
       <option name="Make" enabled="false" />
+      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="standalone-compile" />
     </method>
   </configuration>
 </component>

@@ -32,7 +32,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="grails-1.2.0" level="project" />
-    <orderEntry type="module" module-name="RiskAnalyticsDevelopmentRunner-grailsPlugins" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library">
         <CLASSES>

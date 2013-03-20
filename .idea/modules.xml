@@ -9,6 +9,10 @@
       <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-pc.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugin-risk-analytics-pc.iml" group="Plugins" />
       <module fileurl="file://$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugins.iml" filepath="$PROJECT_DIR$/RiskAnalyticsDevelopmentRunner-grailsPlugins.iml" />
       <module fileurl="file://$PROJECT_DIR$/gridgain-3.0.0c/gridgain-3.0.0c.iml" filepath="$PROJECT_DIR$/gridgain-3.0.0c/gridgain-3.0.0c.iml" />
+      <module fileurl="file://$PROJECT_DIR$/riskAnalyticsApplication-inplacePlugin.iml" filepath="$PROJECT_DIR$/riskAnalyticsApplication-inplacePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/riskAnalyticsCommons-inplacePlugin.iml" filepath="$PROJECT_DIR$/riskAnalyticsCommons-inplacePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/riskAnalyticsCore-inplacePlugin.iml" filepath="$PROJECT_DIR$/riskAnalyticsCore-inplacePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/riskAnalyticsPcCashflow-inplacePlugin.iml" filepath="$PROJECT_DIR$/riskAnalyticsPcCashflow-inplacePlugin.iml" />
     </modules>
   </component>
 </project>
