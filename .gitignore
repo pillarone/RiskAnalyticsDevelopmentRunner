@@ -1,4 +1,6 @@
 target/*
+out/*
 web-app/plugins/*
 .idea/workspace.xml
-stacktrace.log
+*.log
+atlassian-ide-plugin.xml
