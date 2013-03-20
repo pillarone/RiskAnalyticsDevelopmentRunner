@@ -50,10 +50,10 @@ grails.project.dependency.resolution = {
 //Change paths to desired risk analytics plugin locations
 grails.plugin.location.'risk-analytics-core' = "../risk-analytics-core"
 grails.plugin.location.'risk-analytics-application' = "../risk-analytics-application"
-//grails.plugin.location.'risk-analytics-life' = "../riskanalytics-life"
-//grails.plugin.location.'risk-analytics-pc' = "../risk-analytics-property-casualty"
+grails.plugin.location.'risk-analytics-life' = "../riskanalytics-life"
+grails.plugin.location.'risk-analytics-pc' = "../risk-analytics-property-casualty"
 grails.plugin.location.'risk-analytics-pc-cashflow' = "../risk-analytics-pc-cashflow"
 grails.plugin.location.'risk-analytics-commons' = "../risk-analytics-commons"
-//grails.plugin.location.'art-models' = "../art-models"
+grails.plugin.location.'art-models' = "../art-models"
 //grails.plugin.location.'risk-analytics-graph-core' = "../RiskAnalyticsGraphCore"
 //grails.plugin.location.'risk-analytics-graph-form-editor' = "../RiskAnalyticsGraphFormEditor"
