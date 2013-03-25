@@ -34,7 +34,7 @@ grails.project.dependency.resolution = {
         runtime ":spring-security-core:1.2.7.3"
 
         compile "com.canoo:ulc:${ulcVersion}"
-        runtime("org.pillarone:pillar-one-ulc-extensions:0.3") { transitive = false }
+        runtime("org.pillarone:pillar-one-ulc-extensions:0.4") { transitive = false }
     }
 
     dependencies {
@@ -55,5 +55,5 @@ grails.plugin.location.'risk-analytics-pc' = "../risk-analytics-property-casualt
 grails.plugin.location.'risk-analytics-pc-cashflow' = "../risk-analytics-pc-cashflow"
 grails.plugin.location.'risk-analytics-commons' = "../risk-analytics-commons"
 grails.plugin.location.'art-models' = "../art-models"
-//grails.plugin.location.'risk-analytics-graph-core' = "../RiskAnalyticsGraphCore"
-//grails.plugin.location.'risk-analytics-graph-form-editor' = "../RiskAnalyticsGraphFormEditor"
+grails.plugin.location.'risk-analytics-graph-core' = "../risk-analytics-graph-core"
+grails.plugin.location.'risk-analytics-graph-form-editor' = "../risk-analytics-graph-form-editor"
