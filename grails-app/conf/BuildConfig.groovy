@@ -7,13 +7,11 @@ grails.project.dependency.resolution = {
     repositories {
         grailsHome()
         grailsCentral()
-
-        String absolutePluginDir = grailsSettings.projectPluginsDir.absolutePath
-
-        def ulcClientJarResolver = new FileSystemResolver()
-        ulcClientJarResolver.addArtifactPattern "${absolutePluginDir}/ulc-[revision]/web-app/lib/[artifact].[ext]"
-        ulcClientJarResolver.addArtifactPattern "${basedir}/web-app/lib/[artifact]-[revision].[ext]"
+	
+	def ulcClientJarResolver = new FileSystemResolver()
+        ulcClientJarResolver.addArtifactPattern "${basedir}/../risk-analytics-graph-form-editor/web-app/lib/[artifact]-[revision].[ext]"
         ulcClientJarResolver.name = "ulc"
+
         resolver ulcClientJarResolver
 
         mavenRepo "https://repository.intuitive-collaboration.com/nexus/content/repositories/pillarone-public/"
@@ -21,7 +19,7 @@ grails.project.dependency.resolution = {
 
     }
 
-    String ulcVersion = "ria-suite-u5"
+    String ulcVersion = "ria-suite-2012-u1"
 
     plugins {
         runtime ":background-thread:1.3"
@@ -34,16 +32,7 @@ grails.project.dependency.resolution = {
         runtime ":spring-security-core:1.2.7.3"
 
         compile "com.canoo:ulc:${ulcVersion}"
-        runtime("org.pillarone:pillar-one-ulc-extensions:0.4") { transitive = false }
-    }
-
-    dependencies {
-        compile group: 'canoo', name: 'ulc-applet-client', version: ulcVersion
-        compile group: 'canoo', name: 'ulc-base-client', version: ulcVersion
-        compile group: 'canoo', name: 'ulc-base-trusted', version: ulcVersion
-        compile group: 'canoo', name: 'ulc-jnlp-client', version: ulcVersion
-        compile group: 'canoo', name: 'ulc-servlet-client', version: ulcVersion
-        compile group: 'canoo', name: 'ulc-standalone-client', version: ulcVersion
+        runtime("org.pillarone:pillar-one-ulc-extensions:0.6") { transitive = false }
     }
 }
 

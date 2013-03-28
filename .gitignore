@@ -3,4 +3,5 @@ out/*
 web-app/plugins/*
 .idea/workspace.xml
 *.log
+*.iml
 atlassian-ide-plugin.xml
