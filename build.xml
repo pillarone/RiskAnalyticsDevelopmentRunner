@@ -16,8 +16,6 @@
     <property name="webapp.lib.dir" value="web-app/lib"/>
     <property name="ulcPlugIn.webapp.lib.dir" value="${plugin.dir}/ulc-ria-suite-u5/web-app/lib"/>
 
-    <property name="GRAILS_JVM_OPTS" value="-Xmx1500m -XX:MaxPermSize=512m -Duser.language='en'"/>
-
     <import file="../risk-analytics-core/scripts/build.xml" />
 
     <target name="jar-client" description="--> Create clientside jar files">
