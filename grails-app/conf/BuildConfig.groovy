@@ -19,7 +19,7 @@ grails.project.dependency.resolution = {
 
     }
 
-    String ulcVersion = "ria-suite-2012-u1"
+    String ulcVersion = "ria-suite-2012-u1-2"
 
     plugins {
         runtime ":background-thread:1.3"
@@ -32,7 +32,7 @@ grails.project.dependency.resolution = {
         runtime ":spring-security-core:1.2.7.3"
 
         compile "com.canoo:ulc:${ulcVersion}"
-        runtime("org.pillarone:pillar-one-ulc-extensions:0.7") { transitive = false }
+        runtime("org.pillarone:pillar-one-ulc-extensions:0.8") { transitive = false }
     }
 }
 
@@ -44,5 +44,6 @@ grails.plugin.location.'risk-analytics-pc' = "../risk-analytics-property-casualt
 grails.plugin.location.'risk-analytics-pc-cashflow' = "../risk-analytics-pc-cashflow"
 grails.plugin.location.'risk-analytics-commons' = "../risk-analytics-commons"
 grails.plugin.location.'art-models' = "../art-models"
-grails.plugin.location.'risk-analytics-graph-core' = "../risk-analytics-graph-core"
-grails.plugin.location.'risk-analytics-graph-form-editor' = "../risk-analytics-graph-form-editor"
+//grails.plugin.location.'risk-analytics-graph-core' = "../risk-analytics-graph-core"
+//grails.plugin.location.'risk-analytics-graph-form-editor' = "../risk-analytics-graph-form-editor"
+grails.tomcat.jvmArgs= ["-Xms512m",  "-Xmx2G", "-XX:PermSize=512m", "-XX:MaxPermSize=512m"]
