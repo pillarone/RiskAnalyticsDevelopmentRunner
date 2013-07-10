@@ -1,3 +1,5 @@
+import org.apache.log4j.PatternLayout
+import org.pillarone.riskanalytics.core.log.TraceAppender
 import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
@@ -98,17 +100,52 @@ environments {
         resultBulkInsert = MysqlBulkInsert
         calculationBulkInsert = MysqlCalculationsBulkInsert
         ExceptionSafeOut = System.out
-        models = ['MultiCompanyModel']
+        models = ['GIRAModel',  'ORSAModel']
+
         log4j = {
             appenders {
-                console name: 'stdout', layout: pattern(conversionPattern: '[%d] %-5p %c{1} %m%n')
-                file name: 'file', file: 'RiskAnalytics.log', layout: pattern(conversionPattern: '[%d] %-5p %c{1} %m%n')
+
+                String layoutPattern = "[%d{dd.MMM.yyyy HH:mm:ss,SSS}] - %t (%X{username}) - %-5p %c{1} %m%n"
+
+                console name: 'stdout', layout: pattern(conversionPattern: layoutPattern)
+
+                LoggingAppender loggingAppender = LoggingAppender.getInstance()
+                loggingAppender.setName('application')
+                loggingAppender.loggingManager.layout = "[%d{HH:mm:ss,SSS}] - %c{1} %m%n"
+                appender loggingAppender
+
+                TraceAppender traceAppender = new TraceAppender(name: "traceAppender")
+                traceAppender.layout = new PatternLayout("[%d{dd.MMM.yyyy HH:mm:ss,SSS}] - %-5p %c{1} %m%n")
+                appender traceAppender
+
             }
             root {
-                error 'stdout', 'file'
+                error()
                 additivity = false
             }
-            info 'org.pillarone.riskanalytics'
+
+            def infoPackages = [
+                    'org.pillarone.riskanalytics',
+            ]
+
+            def debugPackages = [
+                    'org.pillarone.riskanalytics.core.fileimport'
+            ]
+
+            info(
+                    traceAppender: infoPackages,
+                    application: infoPackages,
+                    stdout: infoPackages,
+                    additivity: false
+            )
+
+            debug(
+                    traceAppender: ['org.pillarone.riskanalytics.core.simulation.item.ParametrizedItem', 'org.pillarone.riskanalytics.application.ui.parameterization.model'],
+                    application: debugPackages,
+                    stdout: debugPackages,
+                    additivity: false
+            )
+
         }
         keyFiguresToCalculate = [
                 'stdev': true,
