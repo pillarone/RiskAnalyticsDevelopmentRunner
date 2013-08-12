@@ -76,3 +76,8 @@ from DATABASE_NAME.single_value_result s, DATABASE_NAME.path_mapping p, DATABASE
 where s.path_id = p.id
 and s.collector_id = c.id
 and s.field_id = f.id;
+create view DATABASE_NAME.symbolic_post_simulation_calculation as
+select s.id AS id, p.path_name AS 'path', c.collector_name AS 'collector', f.field_name AS 'field', s.run_id AS 'run_id',
+ s.period AS 'period', s.result AS 'result', s.key_figure as 'key_figure', s.key_figure_parameter as 'key_figure_parameter'
+ from (((DATABASE_NAME.post_simulation_calculation s join DATABASE_NAME.path_mapping p) join DATABASE_NAME.collector_mapping c) join DATABASE_NAME.field_mapping f)
+ where ((s.path_id = p.id) and (s.collector_id = c.id) and (s.field_id = f.id));
