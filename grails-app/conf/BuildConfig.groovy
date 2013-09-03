@@ -19,7 +19,7 @@ grails.project.dependency.resolution = {
 
     }
 
-    String ulcVersion = "ria-suite-2012-u1-2"
+    String ulcVersion = "ria-suite-2013-2"
 
     plugins {
         runtime ":background-thread:1.3"
@@ -32,18 +32,20 @@ grails.project.dependency.resolution = {
         runtime ":spring-security-core:1.2.7.3"
 
         compile "com.canoo:ulc:${ulcVersion}"
-        runtime("org.pillarone:pillar-one-ulc-extensions:0.8") { transitive = false }
+        runtime("org.pillarone:pillar-one-ulc-extensions:1.1") { transitive = false }
     }
 }
 
 //Change paths to desired risk analytics plugin locations
 grails.plugin.location.'risk-analytics-core' = "../risk-analytics-core"
 grails.plugin.location.'risk-analytics-application' = "../risk-analytics-application"
-grails.plugin.location.'risk-analytics-life' = "../riskanalytics-life"
+//grails.plugin.location.'risk-analytics-life' = "../riskanalytics-life"
 grails.plugin.location.'risk-analytics-pc' = "../risk-analytics-property-casualty"
 grails.plugin.location.'risk-analytics-pc-cashflow' = "../risk-analytics-pc-cashflow"
 grails.plugin.location.'risk-analytics-commons' = "../risk-analytics-commons"
-grails.plugin.location.'art-models' = "../art-models"
+grails.plugin.location.'risk-analytics-reporting' = "../risk-analytics-reporting"
+//grails.plugin.location.'art-models' = "../art-models"
+//grails.plugin.location.'art-reports' = "../art-reports"
 //grails.plugin.location.'risk-analytics-graph-core' = "../risk-analytics-graph-core"
 //grails.plugin.location.'risk-analytics-graph-form-editor' = "../risk-analytics-graph-form-editor"
 grails.tomcat.jvmArgs= ["-Xms512m",  "-Xmx2G", "-XX:PermSize=512m", "-XX:MaxPermSize=512m"]
