@@ -5,6 +5,8 @@ import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
 import org.pillarone.riskanalytics.application.logging.model.LoggingAppender
 import org.pillarone.riskanalytics.core.output.batch.results.OracleBulkInsert
+import org.pillarone.riskanalytics.domain.pc.cf.claim.generator.external.ExternalValuesResource
+import org.pillarone.riskanalytics.domain.pc.cf.claim.generator.external.ExternalValuesExtendedResource
 
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
@@ -36,6 +38,7 @@ userLogin = false
 // Fields can contain any of the allowed values: Sec Min Hour dayOfMonth month dayOfWeek Year
 // Fire every 60 minutes
 batchCron = "0 0/10 * * * ?"
+includedResources = [ExternalValuesExtendedResource.simpleName, ExternalValuesResource.simpleName]
 environments {
     development {
         models = ["CoreModel", 'ApplicationModel', 'MultiProductStatutoryLifeModel', 'PodraModel']
