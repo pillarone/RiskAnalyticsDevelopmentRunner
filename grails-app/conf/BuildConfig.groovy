@@ -1,5 +1,7 @@
 import org.apache.ivy.plugins.resolver.FileSystemResolver
 
+grails.project.dependency.resolver = "maven"
+
 grails.project.dependency.resolution = {
     inherits "global" // inherit Grails' default dependencies
     log "warn"
@@ -7,12 +9,7 @@ grails.project.dependency.resolution = {
     repositories {
         grailsHome()
         grailsCentral()
-	
-	def ulcClientJarResolver = new FileSystemResolver()
-        ulcClientJarResolver.addArtifactPattern "${basedir}/../risk-analytics-graph-form-editor/web-app/lib/[artifact]-[revision].[ext]"
-        ulcClientJarResolver.name = "ulc"
-
-        resolver ulcClientJarResolver
+	    mavenCentral()
 
         mavenRepo "https://repository.intuitive-collaboration.com/nexus/content/repositories/pillarone-public/"
         mavenRepo "https://ci.canoo.com/nexus/content/repositories/public-releases"
@@ -23,16 +20,13 @@ grails.project.dependency.resolution = {
 
     plugins {
         runtime ":background-thread:1.3"
-        runtime ":hibernate:2.2.1"
+        runtime ":hibernate:3.6.10.3"
         runtime ":joda-time:0.5"
-        runtime ":maven-publisher:0.7.5", {
-            excludes "groovy"
-        }
         runtime ":quartz:0.4.2"
-        runtime ":spring-security-core:1.2.7.3"
+        runtime ":spring-security-core:2.0-RC2"
 
         compile "com.canoo:ulc:${ulcVersion}"
-        runtime("org.pillarone:pillar-one-ulc-extensions:1.1") { transitive = false }
+        runtime("org.pillarone:pillar-one-ulc-extensions:1.2") { transitive = false }
     }
 }
 

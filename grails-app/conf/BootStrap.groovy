@@ -1,4 +1,4 @@
-import grails.plugins.springsecurity.SpringSecurityService
+import grails.plugin.springsecurity.SpringSecurityService
 import org.pillarone.riskanalytics.core.user.UserManagement
 import org.pillarone.riskanalytics.core.parameter.comment.Tag
 import org.springframework.transaction.TransactionStatus
