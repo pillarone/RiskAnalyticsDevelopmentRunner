@@ -12,7 +12,9 @@ grails.project.dependency.resolution = {
 	    mavenCentral()
 
         mavenRepo "https://repository.intuitive-collaboration.com/nexus/content/repositories/pillarone-public/"
+        mavenRepo "https://repository.intuitive-collaboration.com/nexus/content/repositories/pillarone-public-snapshot/"
         mavenRepo "https://ci.canoo.com/nexus/content/repositories/public-releases"
+        mavenRepo "http://repo.spring.io/milestone/" //needed for spring-security-core 2.0-rc2 plugin
 
     }
 
