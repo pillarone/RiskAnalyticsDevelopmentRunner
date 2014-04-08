@@ -1,12 +1,12 @@
 import org.apache.log4j.PatternLayout
+import org.pillarone.riskanalytics.application.ui.simulation.model.impl.queue.LoggingAppender
 import org.pillarone.riskanalytics.core.log.TraceAppender
-import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
-import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.calculations.MysqlCalculationsBulkInsert
-import org.pillarone.riskanalytics.application.logging.model.LoggingAppender
+import org.pillarone.riskanalytics.core.output.batch.results.MysqlBulkInsert
 import org.pillarone.riskanalytics.core.output.batch.results.OracleBulkInsert
-import org.pillarone.riskanalytics.domain.pc.cf.claim.generator.external.ExternalValuesResource
+import org.pillarone.riskanalytics.core.output.batch.results.SQLServerBulkInsert
 import org.pillarone.riskanalytics.domain.pc.cf.claim.generator.external.ExternalValuesExtendedResource
+import org.pillarone.riskanalytics.domain.pc.cf.claim.generator.external.ExternalValuesResource
 
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
@@ -26,6 +26,8 @@ grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
 grails.views.default.codec = "none" // none, html, base64
 grails.views.gsp.encoding = "UTF-8"
 grails.converters.encoding = "UTF-8"
+
+grails.spring.bean.packages = ['org.pillarone']
 
 // enabled native2ascii conversion of i18n properties files
 grails.enable.native2ascii = true
