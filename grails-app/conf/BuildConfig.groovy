@@ -18,12 +18,11 @@ grails.project.dependency.resolution = {
 
     }
 
-    String ulcVersion = "ria-suite-2013-2"
+    String ulcVersion = "7.2.0.6"
 
     plugins {
         runtime ":background-thread:1.3"
         runtime ":hibernate:3.6.10.3"
-        runtime ":joda-time:0.5"
         runtime ":quartz:0.4.2"
         runtime ":spring-security-core:2.0-RC2"
 
